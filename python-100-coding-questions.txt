@@ -676,3 +676,247 @@ def remove_even(l):
 
 l = list(map(int, input().split()))
 print(remove_even(l))
+
+Question 29
+
+Level 1 (Beginner)
+
+Question:
+Write a program to count how many numbers between 1 and 100 are divisible by 9.
+
+Hints:
+Use a loop and modulo operator.
+
+Solution:
+
+count = 0
+
+for i in range(1, 101):
+    if i % 9 == 0:
+        count += 1
+
+print(count)
+
+Question 30
+
+Level 1 (Beginner)
+
+Question:
+Write a program to reverse a number.
+
+Hints:
+Use modulo and integer division.
+
+Solution:
+
+n = int(input())
+rev = 0
+
+while n > 0:
+    rev = rev * 10 + n % 10
+    n //= 10
+
+print(rev)
+
+Question 31
+
+Level 1 (Easy)
+
+Question:
+Write a program to print the first 10 natural numbers using a loop.
+
+Hints:
+Use range().
+
+Solution:
+
+for i in range(1, 11):
+    print(i)
+
+Question 32
+
+Level 2 (Easy–Moderate)
+
+Question:
+Write a program to check whether a year is a leap year.
+
+Hints:
+A leap year is divisible by 4 but not 100, unless divisible by 400.
+
+Solution:
+
+year = int(input())
+
+if (year % 400 == 0) or (year % 4 == 0 and year % 100 != 0):
+    print("Leap Year")
+else:
+    print("Not a Leap Year")
+
+Question 33
+
+Level 2 (Moderate)
+
+Question:
+Write a program to find the second largest element in a list.
+
+Hints:
+Sort the list or track two maximum values.
+
+Solution:
+
+l = list(map(int, input().split()))
+l = list(set(l))
+l.sort()
+
+print(l[-2])
+
+Question 34
+
+Level 2 (Moderate – Interview Question)
+
+Question:
+Write a program to check whether two strings are anagrams.
+
+Hints:
+Sort both strings and compare.
+
+Solution:
+
+s1 = input()
+s2 = input()
+
+if sorted(s1) == sorted(s2):
+    print("Anagram")
+else:
+    print("Not Anagram")
+
+Question 35
+
+Level 2 (Moderate)
+
+Question:
+Write a program to find the frequency of each element in a list.
+
+Hints:
+Use a dictionary.
+
+Solution:
+
+l = list(map(int, input().split()))
+freq = {}
+
+for i in l:
+    freq[i] = freq.get(i, 0) + 1
+
+print(freq)
+
+Question 36
+
+Level 2 (Moderate)
+
+Question:
+Write a program to find all prime numbers between 1 and 100.
+
+Hints:
+Use nested loops.
+
+Solution:
+
+for num in range(2, 101):
+    prime = True
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            prime = False
+            break
+    if prime:
+        print(num, end=" ")
+
+Question 37
+
+Level 2 (Moderate – Interview Favorite)
+
+Question:
+Write a function to return the count of uppercase and lowercase letters in a string.
+
+Hints:
+Use isupper() and islower().
+
+Solution:
+
+def count_case(s):
+    upper = 0
+    lower = 0
+    for ch in s:
+        if ch.isupper():
+            upper += 1
+        elif ch.islower():
+            lower += 1
+    return upper, lower
+
+s = input()
+print(count_case(s))
+
+Question 38
+
+Level 3 (Moderate)
+
+Question:
+Write a program to flatten a nested list.
+
+Hints:
+Use loop and extend().
+
+Solution:
+
+nested = [[1, 2], [3, 4], [5, 6]]
+flat = []
+
+for sub in nested:
+    flat.extend(sub)
+
+print(flat)
+
+Question 39
+
+Level 3 (Moderate – Interview Question)
+
+Question:
+Write a program to find the first non-repeating character in a string.
+
+Hints:
+Use dictionary for counting.
+
+Solution:
+
+s = input()
+freq = {}
+
+for ch in s:
+    freq[ch] = freq.get(ch, 0) + 1
+
+for ch in s:
+    if freq[ch] == 1:
+        print(ch)
+        break
+
+Question 40
+
+Level 3 (Moderate)
+
+Question:
+Write a function to generate all divisors of a given number.
+
+Hints:
+Check divisibility using a loop.
+
+Solution:
+
+def divisors(n):
+    result = []
+    for i in range(1, n + 1):
+        if n % i == 0:
+            result.append(i)
+    return result
+
+n = int(input())
+print(divisors(n))
