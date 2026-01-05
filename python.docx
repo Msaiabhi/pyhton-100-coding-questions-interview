@@ -1,0 +1,493 @@
+🐍 Python Programming – Complete Reading Guide (Beginner Friendly)
+📌 Introduction to Python
+Python is a high-level, interpreted, general-purpose programming language created by Guido van Rossum and released in 1991.
+
+Python is designed to be:
+
+Easy to read
+
+Easy to write
+
+Easy to understand
+
+Unlike other languages, Python uses English-like syntax, which makes it ideal for beginners.
+
+❓ Why Python?
+Python is widely used because:
+
+It has simple syntax
+
+Requires less code
+
+Works on multiple platforms
+
+Has a huge library support
+
+Used by top companies like Google, Netflix, Instagram
+
+Python is both powerful and beginner-friendly.
+
+🛠 Python Characteristics
+Interpreted language → Code runs line by line
+
+Dynamically typed → No need to declare variable types
+
+Object-Oriented → Supports classes and objects
+
+Open source → Free to use
+
+Portable → Runs on Windows, Mac, Linux
+
+📦 Installing Python
+Download Python from the official website:
+👉 https://www.python.org
+
+Check installation:
+
+python --version
+👋 First Python Program
+print("Hello, World!")
+Explanation:
+print() is a built-in function
+
+It displays output on the screen
+
+🧮 Variables in Python
+A variable is used to store data in memory.
+
+x = 10
+name = "Python"
+price = 99.99
+Important Points:
+No need to specify data type
+
+Python automatically understands the type
+
+🔢 Data Types
+Data type defines what kind of data a variable stores.
+
+Common Data Types:
+int → Integer numbers
+
+float → Decimal numbers
+
+str → Text
+
+bool → True or False
+
+Example:
+
+a = 10        # int
+b = 10.5      # float
+c = "Hello"   # string
+d = True      # boolean
+📚 Type Checking
+x = 10
+print(type(x))
+🔀 Type Conversion
+x = "10"
+y = int(x)
+🧠 Operators
+Operators perform operations on values.
+
+Types of Operators:
+Arithmetic → + - * / %
+
+Comparison → == != > <
+
+Logical → and or not
+
+Assignment → = += -=
+
+Example:
+
+a = 10
+b = 5
+print(a + b)
+🔁 Conditional Statements
+Used to make decisions.
+
+if Statement
+age = 18
+if age >= 18:
+    print("Eligible to vote")
+if–else
+if age >= 18:
+    print("Eligible")
+else:
+    print("Not Eligible")
+elif
+marks = 75
+if marks >= 90:
+    print("A Grade")
+elif marks >= 60:
+    print("B Grade")
+else:
+    print("Fail")
+🔄 Loops
+Loops are used to repeat code.
+
+for Loop
+for i in range(5):
+    print(i)
+while Loop
+i = 1
+while i <= 5:
+    print(i)
+    i += 1
+⛔ Loop Control Statements
+break → Stops loop
+
+continue → Skips current iteration
+
+📦 Data Structures
+List
+Used to store multiple values.
+
+numbers = [1, 2, 3, 4]
+Ordered
+
+Changeable
+
+Tuple
+colors = ("red", "green", "blue")
+Ordered
+
+Not changeable (immutable)
+
+Set
+unique = {1, 2, 3}
+No duplicates
+
+Unordered
+
+Dictionary
+Stores data in key-value pairs.
+student = {
+    "name": "Abhinav",
+    "age": 22
+}
+🧩 Functions
+Functions are used to reuse code.
+
+def add(a, b):
+    return a + b
+Calling function:
+
+print(add(10, 20))
+🧱 Object-Oriented Programming (OOP)
+Class & Object
+class Person:
+    def __init__(self, name):
+        self.name = name
+
+    def greet(self):
+        print("Hello", self.name)
+
+p = Person("Abhinav")
+p.greet()
+🧱 Object-Oriented Programming (OOPS) in Python – Complete Explanation
+📌 What is OOPS?
+Object-Oriented Programming (OOPS) is a programming approach where a program is designed using objects and classes instead of only functions and logic.
+
+OOPS helps us:
+
+Organize large programs
+
+Reuse code
+
+Reduce complexity
+
+Make code easy to maintain and understand
+
+Python fully supports OOPS concepts.
+
+🔹 Core OOPS Concepts
+Python OOPS is mainly based on six fundamental concepts:
+
+Class
+
+Object
+
+Encapsulation
+
+Inheritance
+
+Polymorphism
+
+Abstraction
+
+We will explain each one clearly with examples and real-life meaning.
+
+1️⃣ Class
+📖 What is a Class?
+A class is a blueprint or template used to create objects.
+
+👉 It defines:
+
+What data an object will have (variables)
+
+What actions it can perform (methods)
+
+🧠 Real-Life Example
+Think of a Car blueprint:
+
+It defines color, model, speed
+
+But it is NOT a real car
+
+🧑‍💻 Python Example
+class Car:
+    brand = "Toyota"
+    color = "White"
+Here:
+
+Car is a class
+
+brand and color are class variables
+
+2️⃣ Object
+📖 What is an Object?
+An object is a real instance of a class.
+
+👉 If class is a blueprint, object is the real thing created from it.
+
+🧠 Real-Life Example
+Blueprint → Car
+
+Real car on road → Object
+
+🧑‍💻 Python Example
+car1 = Car()
+print(car1.brand)
+print(car1.color)
+Here:
+
+car1 is an object of class Car
+
+3️⃣ Constructor (__init__ Method)
+📖 What is a Constructor?
+A constructor is a special method that:
+
+Runs automatically when an object is created
+
+Used to initialize (assign values to) object variables
+
+In Python, constructor name is __init__.
+
+🧑‍💻 Example
+class Student:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+s1 = Student("Abhinav", 22)
+print(s1.name)
+print(s1.age)
+🔍 Explanation
+self refers to the current object
+
+Values are passed during object creation
+
+4️⃣ Encapsulation
+📖 What is Encapsulation?
+Encapsulation means wrapping data and methods together and protecting data from direct access.
+
+👉 It helps in:
+
+Data security
+
+Controlled access
+
+Avoiding accidental modification
+
+🧠 Real-Life Example
+ATM Machine:
+
+You cannot directly access money
+
+You use methods (withdraw, balance)
+
+🔐 Access Modifiers in Python
+Python uses naming conventions:
+
+Type	Syntax	Meaning
+Public	var	Accessible everywhere
+Protected	_var	Accessible inside class & child
+Private	__var	Accessible only inside class
+🧑‍💻 Encapsulation Example
+class BankAccount:
+    def __init__(self):
+        self.__balance = 1000   # private variable
+
+    def get_balance(self):
+        return self.__balance
+
+acc = BankAccount()
+print(acc.get_balance())
+👉 Direct access like acc.__balance ❌ not allowed
+
+5️⃣ Inheritance
+📖 What is Inheritance?
+Inheritance allows one class to use properties and methods of another class.
+
+👉 It promotes code reusability.
+
+🧠 Real-Life Example
+Parent → Human
+
+Child → Student (inherits features)
+
+🧑‍💻 Python Example
+class Animal:
+    def speak(self):
+        print("Animal makes sound")
+
+class Dog(Animal):
+    def bark(self):
+        print("Dog barks")
+
+d = Dog()
+d.speak()
+d.bark()
+🔍 Explanation
+Dog inherits from Animal
+
+Dog can access speak() method
+
+🔁 Types of Inheritance
+Single Inheritance
+
+Multiple Inheritance
+
+Multilevel Inheritance
+
+Hierarchical Inheritance
+
+Example – Multiple Inheritance
+class A:
+    def showA(self):
+        print("Class A")
+
+class B:
+    def showB(self):
+        print("Class B")
+
+class C(A, B):
+    pass
+
+obj = C()
+obj.showA()
+obj.showB()
+6️⃣ Polymorphism
+📖 What is Polymorphism?
+Polymorphism means one name, many forms.
+
+👉 Same method name behaves differently in different classes.
+
+🧠 Real-Life Example
+Person can be a teacher, student, employee
+
+Same person → different roles
+
+🧑‍💻 Example – Method Overriding
+class Bird:
+    def fly(self):
+        print("Bird can fly")
+
+class Penguin(Bird):
+    def fly(self):
+        print("Penguin cannot fly")
+
+b = Penguin()
+b.fly()
+👉 Same method fly() behaves differently
+
+7️⃣ Abstraction
+📖 What is Abstraction?
+Abstraction means hiding implementation details and showing only essential features.
+
+👉 User knows what to do, not how it works.
+
+🧠 Real-Life Example
+Driving a car
+
+You use accelerator, brake
+
+You don’t know engine internals
+
+🧑‍💻 Python Abstraction Example
+from abc import ABC, abstractmethod
+
+class Shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+
+class Square(Shape):
+    def area(self):
+        print("Area = side * side")
+
+s = Square()
+s.area()
+👉 Abstract class cannot be instantiated directly
+
+8️⃣ self Keyword
+📖 What is self?
+Refers to current object
+
+Used to access object variables and methods inside class
+
+🧑‍💻 Example
+class Demo:
+    def show(self):
+        print("Hello")
+
+d = Demo()
+d.show()
+9️⃣ super() Keyword
+📖 What is super()?
+Used to call parent class constructor or methods.
+
+🧑‍💻 Example
+class Parent:
+    def __init__(self):
+        print("Parent constructor")
+
+class Child(Parent):
+    def __init__(self):
+        super().__init__()
+        print("Child constructor")
+
+c = Child()
+🔟 Benefits of OOPS
+Code reusability
+
+Better organization
+
+Easy maintenance
+
+Secure data
+
+Real-world modeling
+⚠ Exception Handling
+Used to handle errors.
+
+try:
+    x = int("abc")
+except ValueError:
+    print("Error occurred")
+📁 File Handling
+Write File
+file = open("data.txt", "w")
+file.write("Hello Python")
+file.close()
+Read File
+file = open("data.txt", "r")
+print(file.read())
+file.close()
+📦 Modules
+Modules help organize code.
+
+import math
+print(math.sqrt(25))
