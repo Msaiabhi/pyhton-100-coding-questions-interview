@@ -922,3 +922,283 @@ l = list(map(int, input().split()))
 rotated = l[1:] + [l[0]]
 print(rotated)
 ```
+Question 48
+Level 1
+
+Question:
+Write a program to simulate a simple login system.
+The user should be allowed only 3 attempts to enter the correct username and password.
+
+Hints:
+
+Use while loop
+
+Use input()
+
+Use if-else
+
+Solution:
+```py
+correct_user = "admin"
+correct_pass = "python123"
+attempts = 3
+
+while attempts > 0:
+    user = input("Enter username: ")
+    pwd = input("Enter password: ")
+
+    if user == correct_user and pwd == correct_pass:
+        print("Login Successful")
+        break
+    else:
+        attempts -= 1
+        print("Invalid credentials. Attempts left:", attempts)
+
+if attempts == 0:
+    print("Account Locked")
+```
+Question 49
+Level 1
+
+Question:
+Write a program to accept N student marks from the user and display the average, highest, and lowest marks.
+
+Hints:
+
+Use list
+
+Use input() inside loop
+
+Use sum(), max(), min()
+
+Solution:
+```py
+n = int(input("Enter number of students: "))
+marks = []
+
+for i in range(n):
+    m = int(input(f"Enter marks of student {i+1}: "))
+    marks.append(m)
+
+print("Average:", sum(marks) / n)
+print("Highest:", max(marks))
+print("Lowest:", min(marks))
+```
+Question 50
+Level 1
+
+Question:
+Write a program to count the frequency of each word in a sentence entered by the user.
+
+Hints:
+
+Use split()
+
+Use dictionary
+
+Use input()
+
+Solution:
+```py
+sentence = input("Enter a sentence: ")
+words = sentence.split()
+
+freq = {}
+for word in words:
+    freq[word] = freq.get(word, 0) + 1
+
+print(freq)
+```
+Question 51
+Level 2
+
+Question:
+Write a program to simulate a bank account system where the user can deposit and withdraw money.
+
+Hints:
+
+Use class
+
+Use input()
+
+Use methods
+
+Solution:
+```python
+class BankAccount:
+    def __init__(self, balance):
+        self.balance = balance
+
+    def deposit(self, amount):
+        self.balance += amount
+
+    def withdraw(self, amount):
+        if amount <= self.balance:
+            self.balance -= amount
+        else:
+            print("Insufficient Balance")
+
+    def show_balance(self):
+        print("Current Balance:", self.balance)
+
+balance = int(input("Enter initial balance: "))
+account = BankAccount(balance)
+
+dep = int(input("Enter amount to deposit: "))
+account.deposit(dep)
+
+wd = int(input("Enter amount to withdraw: "))
+account.withdraw(wd)
+
+account.show_balance()
+```
+Question 52
+Level 1
+
+Question:
+Write a program to validate an email address entered by the user.
+
+Hints:
+
+Use input()
+
+Check for '@' and '.'
+
+Solution:
+```py
+email = input("Enter email address: ")
+
+if "@" in email and "." in email:
+    print("Valid Email")
+else:
+    print("Invalid Email")
+```
+Question 53
+Level 2
+
+Question:
+Write a program to calculate the total bill of a shopping cart.
+The user should enter item names and prices.
+
+Hints:
+
+Use list of dictionaries
+
+Use loop
+
+Use input()
+
+Solution:
+```py
+cart = []
+n = int(input("Enter number of items: "))
+
+for i in range(n):
+    item = input("Enter item name: ")
+    price = int(input("Enter item price: "))
+    cart.append({"item": item, "price": price})
+
+total = 0
+for product in cart:
+    total += product["price"]
+
+print("Total Bill:", total)
+```
+Question 54
+Level 2
+
+Question:
+Write a program to count the number of words in a file whose name is entered by the user.
+
+Hints:
+
+Use file handling
+
+Use input()
+
+Use split()
+
+Solution:
+```py
+filename = input("Enter file name: ")
+
+with open(filename, "r") as f:
+    content = f.read()
+    print("Word Count:", len(content.split()))
+```
+Question 55
+Level 2
+
+Question:
+Write a program to check the strength of a password entered by the user.
+
+Hints:
+
+Use len()
+
+Use any()
+
+Use string methods
+
+Solution:
+```py
+password = input("Enter password: ")
+
+if len(password) < 8:
+    print("Weak Password")
+elif any(c.isdigit() for c in password) and any(c.isupper() for c in password):
+    print("Strong Password")
+else:
+    print("Moderate Password")
+```
+Question 56
+Level 2
+
+Question:
+Write a program to filter and display salaries greater than a given amount entered by the user.
+
+Hints:
+
+Use input()
+
+Use filter()
+
+Use lambda
+
+Solution:
+```py
+n = int(input("Enter number of employees: "))
+salaries = []
+
+for i in range(n):
+    sal = int(input(f"Enter salary of employee {i+1}: "))
+    salaries.append(sal)
+
+limit = int(input("Enter salary limit: "))
+
+result = list(filter(lambda x: x > limit, salaries))
+print("Filtered Salaries:", result)
+```
+Question 57
+Level 2
+
+Question:
+Write a program to divide two numbers entered by the user and handle division by zero.
+
+Hints:
+
+Use input()
+
+Use try-except
+
+Solution:
+```py
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+
+try:
+    result = a / b
+    print("Result:", result)
+except ZeroDivisionError:
+    print("Cannot divide by zero")
+```
