@@ -1545,3 +1545,755 @@ for ch in text:
 print("Vowels:", v)
 print("Consonants:", c)
 ```
+Question 68
+Level 2
+
+Question:
+Write a program to print a list after removing all duplicate values while preserving the original order.
+
+Hints:
+
+Use set() to track seen elements
+
+Maintain a new list for order
+
+Solution:
+
+def removeDuplicate(li):
+    newli = []
+    seen = set()
+
+    for item in li:
+        if item not in seen:
+            seen.add(item)
+            newli.append(item)
+
+    return newli
+
+li = list(map(int, input("Enter list elements separated by space: ").split()))
+print(removeDuplicate(li))
+Question 69
+Level 2
+
+Question:
+Define a class Person and its two child classes Male and Female.
+Each class should have a method getGender() that prints the gender.
+
+Hints:
+
+Use inheritance
+
+Override methods in child classes
+
+Solution:
+
+class Person:
+    def getGender(self):
+        return "Unknown"
+
+class Male(Person):
+    def getGender(self):
+        return "Male"
+
+class Female(Person):
+    def getGender(self):
+        return "Female"
+
+m = Male()
+f = Female()
+
+print(m.getGender())
+print(f.getGender())
+Question 70
+Level 2
+
+Question:
+Write a program that counts and prints the number of occurrences of each character in a string entered by the user.
+
+Example Input:
+
+abcdefgabc
+Example Output:
+
+a,2
+b,2
+c,2
+d,1
+e,1
+f,1
+g,1
+Hints:
+
+Use dictionary
+
+Use dict.get()
+
+Solution:
+
+s = input("Enter a string: ")
+dic = {}
+
+for ch in s:
+    dic[ch] = dic.get(ch, 0) + 1
+
+for k, v in dic.items():
+    print(f"{k},{v}")
+Question 71
+Level 1
+
+Question:
+Write a program which accepts a string from the user and prints it in reverse order.
+
+Example Input:
+
+rise to vote sir
+Example Output:
+
+ris etov ot esir
+Hints:
+
+Use slicing [::-1]
+
+Solution:
+
+s = input("Enter a string: ")
+print(s[::-1])
+Question 72
+Level 1
+
+Question:
+Write a program which accepts a string and prints characters present at even indexes.
+
+Example Input:
+
+H1e2l3l4o5w6o7r8l9d
+Example Output:
+
+Helloworld
+Hints:
+
+Use slicing with step size
+
+Solution:
+
+s = input("Enter a string: ")
+print(s[::2])
+Question 73
+Level 2
+
+Question:
+Write a program to print all permutations of a list entered by the user.
+
+Hints:
+
+Use itertools.permutations()
+
+Solution:
+
+import itertools
+
+li = list(map(int, input("Enter elements separated by space: ").split()))
+perms = itertools.permutations(li)
+
+print(list(perms))
+Question 74
+Level 3
+
+Question:
+Write a program to solve the classic puzzle:
+There are 35 heads and 94 legs among chickens and rabbits.
+Find the number of chickens and rabbits.
+
+Hints:
+
+Chicken has 2 legs
+
+Rabbit has 4 legs
+
+Use loop to try combinations
+
+Solution:
+
+heads = int(input("Enter number of heads: "))
+legs = int(input("Enter number of legs: "))
+
+found = False
+for chickens in range(heads + 1):
+    rabbits = heads - chickens
+    if chickens * 2 + rabbits * 4 == legs:
+        print("Chickens:", chickens)
+        print("Rabbits:", rabbits)
+        found = True
+        break
+
+if not found:
+    print("No solution")
+🔹 NEW QUESTIONS (Same Type, Added)
+Question 75
+Level 2
+
+Question:
+Write a program to find the first non-repeating character in a string.
+
+Hints:
+
+Use dictionary
+
+Count frequency first
+
+Solution:
+
+s = input("Enter a string: ")
+freq = {}
+
+for ch in s:
+    freq[ch] = freq.get(ch, 0) + 1
+
+for ch in s:
+    if freq[ch] == 1:
+        print("First non-repeating character:", ch)
+        break
+Question 76
+Level 2
+
+Question:
+Write a program to check whether a given list is a palindrome.
+
+Hints:
+
+Compare list with its reverse
+
+Solution:
+
+li = input("Enter list elements: ").split()
+
+if li == li[::-1]:
+    print("Palindrome List")
+else:
+    print("Not a Palindrome List")
+Question 77
+Level 3 (Hard)
+
+Question:
+Write a program to group words by their length from a sentence entered by the user.
+
+Hints:
+
+Use dictionary
+
+Length as key
+
+Solution:
+
+sentence = input("Enter a sentence: ")
+words = sentence.split()
+
+result = {}
+for word in words:
+    result.setdefault(len(word), []).append(word)
+
+print(result)
+Explanation (Hard):
+
+Dictionary keys represent word length
+
+setdefault() avoids key checking
+
+Useful in text analysis and NLP preprocessing
+Question 78
+Puzzle
+
+Question:
+We count 35 heads and 94 legs among the chickens and rabbits in a farm.
+How many chickens and how many rabbits are there?
+
+Hint:
+
+Chicken has 2 legs
+
+Rabbit has 4 legs
+
+Use a for loop to try all possible combinations
+
+Solution:
+
+def solve(num_heads, num_legs):
+    for chickens in range(num_heads + 1):
+        rabbits = num_heads - chickens
+        if chickens * 2 + rabbits * 4 == num_legs:
+            return chickens, rabbits
+    return "No solution"
+
+heads = 35
+legs = 94
+print(solve(heads, legs))
+Question 79
+Puzzle
+
+Question:
+A shopkeeper buys an item for ₹800 and sells it at a profit of 25%.
+Write a program to calculate the selling price.
+
+Hint:
+
+Selling Price = Cost Price + Profit
+
+Profit = (Profit % × Cost Price)
+
+Solution:
+
+cost_price = int(input("Enter cost price: "))
+profit_percent = int(input("Enter profit percentage: "))
+
+profit = (profit_percent / 100) * cost_price
+selling_price = cost_price + profit
+
+print("Selling Price:", selling_price)
+Question 80
+Puzzle
+
+Question:
+A number is divisible by both 3 and 5 but not divisible by 10.
+Write a program to find all such numbers between 1 and N.
+
+Hint:
+
+Use modulus operator %
+
+Use loop
+
+Solution:
+
+n = int(input("Enter value of N: "))
+
+result = []
+for i in range(1, n + 1):
+    if i % 3 == 0 and i % 5 == 0 and i % 10 != 0:
+        result.append(i)
+
+print(result)
+Question 81
+String Logic
+
+Question:
+Please write a program which accepts a string from console and prints it in reverse order.
+
+Example Input:
+
+rise to vote sir
+Example Output:
+
+ris etov ot esir
+Hint:
+
+Use slicing [::-1]
+
+Solution:
+
+s = input("Enter a string: ")
+print(s[::-1])
+Question 82
+Puzzle | Interview Logic
+
+Question:
+Write a program to check whether a number entered by the user is a Perfect Number.
+(A perfect number is a number whose sum of proper divisors equals the number.)
+
+Example:
+6 → 1 + 2 + 3 = 6 ✔
+
+Hint:
+
+Use loop
+
+Exclude the number itself
+
+Sum divisors
+
+Solution:
+
+n = int(input("Enter a number: "))
+total = 0
+
+for i in range(1, n):
+    if n % i == 0:
+        total += i
+
+if total == n:
+    print("Perfect Number")
+else:
+    print("Not a Perfect Number")
+Question 83
+Puzzle | Interview Logic
+
+Question:
+Write a program to find the missing number in a sequence of numbers from 1 to N.
+
+Example Input:
+
+1 2 4 5
+Output:
+
+Missing number is 3
+Hint:
+
+Use sum formula: n*(n+1)//2
+
+Subtract actual sum
+
+Solution:
+
+nums = list(map(int, input("Enter numbers: ").split()))
+n = len(nums) + 1
+
+expected_sum = n * (n + 1) // 2
+actual_sum = sum(nums)
+
+print("Missing number:", expected_sum - actual_sum)
+Question 84
+Puzzle | Interview Logic
+
+Question:
+Write a program to check whether a number is a power of 2.
+
+Hint:
+
+Use loop or bitwise logic
+
+Keep dividing by 2
+
+Solution:
+
+n = int(input("Enter a number: "))
+
+if n > 0 and (n & (n - 1)) == 0:
+    print("Power of 2")
+else:
+    print("Not a Power of 2")
+Question 85
+Puzzle | Reasoning
+
+Question:
+Write a program to find the first repeating element in a list entered by the user.
+
+Example Input:
+
+10 5 3 4 3 5 6
+Output:
+
+First repeating element: 3
+Hint:
+
+Use set
+
+Traverse list once
+
+Solution:
+
+nums = list(map(int, input("Enter numbers: ").split()))
+seen = set()
+
+for num in nums:
+    if num in seen:
+        print("First repeating element:", num)
+        break
+    seen.add(num)
+Question 86
+Puzzle | Interview Logic
+
+Question:
+Write a program to check whether two numbers are co-prime.
+(Two numbers are co-prime if their GCD is 1.)
+
+Hint:
+
+Use Euclidean algorithm
+
+Compute GCD
+
+Solution:
+
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+
+x, y = a, b
+while y != 0:
+    x, y = y, x % y
+
+if x == 1:
+    print("Co-prime numbers")
+else:
+    print("Not co-prime")
+Question 87
+Puzzle | Interview Logic
+
+Question:
+Write a program to simulate a traffic signal system:
+
+Red → Stop
+
+Yellow → Ready
+
+Green → Go
+
+The user enters the signal color.
+
+Hint:
+
+Use dictionary or if-else
+
+Normalize input
+
+Solution:
+
+signal = input("Enter signal color: ").lower()
+
+if signal == "red":
+    print("Stop")
+elif signal == "yellow":
+    print("Ready")
+elif signal == "green":
+    print("Go")
+else:
+    print("Invalid signal")
+
+Question 88
+Interview Logic
+
+Question:
+Write a program to check whether a number entered by the user is a Harshad (Niven) Number.
+(A number is Harshad if it is divisible by the sum of its digits.)
+
+Hint:
+
+Extract digits
+
+Sum digits
+
+Check divisibility
+
+Solution:
+
+n = int(input("Enter a number: "))
+s = sum(int(d) for d in str(n))
+
+if n % s == 0:
+    print("Harshad Number")
+else:
+    print("Not a Harshad Number")
+Question 89
+Reasoning Puzzle
+
+Question:
+Write a program to rotate a list to the right by K positions.
+
+Hint:
+
+Use slicing
+
+Use modulo operator
+
+Solution:
+
+li = list(map(int, input("Enter list elements: ").split()))
+k = int(input("Enter rotation count: "))
+
+k = k % len(li)
+rotated = li[-k:] + li[:-k]
+
+print(rotated)
+Question 90
+Interview Logic
+
+Question:
+Write a program to check whether a number is an Armstrong Number.
+(Example: 153 → 1³ + 5³ + 3³ = 153)
+
+Hint:
+
+Convert number to string
+
+Use power operator
+
+Solution:
+
+n = input("Enter a number: ")
+power = len(n)
+
+total = sum(int(d)**power for d in n)
+
+if total == int(n):
+    print("Armstrong Number")
+else:
+    print("Not an Armstrong Number")
+Question 91
+Reasoning Puzzle
+
+Question:
+Write a program to find the longest word in a sentence entered by the user.
+
+Hint:
+
+Use split()
+
+Use max() with key
+
+Solution:
+
+sentence = input("Enter a sentence: ")
+words = sentence.split()
+
+longest = max(words, key=len)
+print("Longest word:", longest)
+Question 92
+Interview Logic
+
+Question:
+Write a program to check whether a given year is a leap year.
+
+Hint:
+
+Divisible by 4
+
+Century years divisible by 400
+
+Solution:
+
+year = int(input("Enter year: "))
+
+if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+    print("Leap Year")
+else:
+    print("Not a Leap Year")
+Question 93
+Reasoning Puzzle
+
+Question:
+Write a program to find the count of prime numbers between 1 and N.
+
+Hint:
+
+Nested loop
+
+Check divisibility
+
+Solution:
+
+n = int(input("Enter value of N: "))
+count = 0
+
+for num in range(2, n + 1):
+    prime = True
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
+            prime = False
+            break
+    if prime:
+        count += 1
+
+print("Prime count:", count)
+Question 94
+Interview Logic
+
+Question:
+Write a program to check whether two strings entered by the user are rotations of each other.
+
+Example:
+ABCD and CDAB → Yes
+
+Hint:
+
+Concatenate first string with itself
+
+Use in operator
+
+Solution:
+
+s1 = input("Enter first string: ")
+s2 = input("Enter second string: ")
+
+if len(s1) == len(s2) and s2 in s1 + s1:
+    print("Rotation of each other")
+else:
+    print("Not a rotation")
+Question 95
+Reasoning Puzzle
+
+Question:
+Write a program to find the majority element in a list
+(An element appearing more than n/2 times).
+
+Hint:
+
+Use dictionary
+
+Count occurrences
+
+Solution:
+
+nums = list(map(int, input("Enter numbers: ").split()))
+freq = {}
+
+for n in nums:
+    freq[n] = freq.get(n, 0) + 1
+
+for k, v in freq.items():
+    if v > len(nums) // 2:
+        print("Majority element:", k)
+        break
+Question 96
+Interview Logic
+
+Question:
+Write a program to convert a decimal number to binary without using built-in functions.
+
+Hint:
+
+Use division by 2
+
+Store remainders
+
+Solution:
+
+n = int(input("Enter a number: "))
+binary = ""
+
+while n > 0:
+    binary = str(n % 2) + binary
+    n //= 2
+
+print("Binary:", binary)
+Question 97
+Reasoning Puzzle
+
+Question:
+Write a program to check whether parentheses in a string are balanced.
+
+Example:
+()()(( )) → Balanced
+
+Hint:
+
+Use stack (list)
+
+Push and pop
+
+Solution:
+
+s = input("Enter parentheses string: ")
+stack = []
+
+for ch in s:
+    if ch == "(":
+        stack.append(ch)
+    elif ch == ")":
+        if not stack:
+            print("Not Balanced")
+            break
+        stack.pop()
+else:
+    if not stack:
+        print("Balanced")
+    else:
+        print("Not Balanced")
+
